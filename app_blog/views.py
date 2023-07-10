@@ -5,7 +5,6 @@ from django.urls import reverse
 # Create your views here.
 def home(request):
     posts = Post.objects.all()
-    url_home = reverse('home')
     return render(request, 'index.html', {'posts': posts})
 
 def post(request, post_id):
