@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('posts/<int:post_id>/', views.post, name='post'),
-    path('posts/addcomment/<int:post_id>', views.addcomment, name='addcomment'),
+    path('posts/addcomment/<int:post_id>/', views.addcomment, name='addcomment'),
 ]

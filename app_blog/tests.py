@@ -37,6 +37,7 @@ class TestViews(TestCase):
         self.client = Client()
         self.user = User.objects.create_user(username='testuser', password='testpassword')
         self.post = Post.objects.create(title='Test Post', brief='Test Brief', content='Test Content', author=self.user)
+        self.post.save()
         self.comment_form_data = {
             'name': 'Test Name',
             'comment': 'Test Comment',
@@ -44,7 +45,6 @@ class TestViews(TestCase):
 
         print("Author:", self.user)
         print("Post:", self.post)
-
 
     def test_home_view(self):
         response = self.client.get(reverse('home'))
