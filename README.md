@@ -78,3 +78,5 @@ A aplicação inclui testes unitários para verificar o funcionamento correto de
 ### Cobertura
 
 Para obter um relatório de cobertura de teste, você pode executar o comando 'coverage run --source=app_blog manage.py test app_blog' para coletar as informações de cobertura e, em seguida, 'coverage report' para exibir o relatório de cobertura atualizado. Além disso, é possível gerar um relatório HTML executando 'coverage html', o qual fornecerá uma visualização mais detalhada da cobertura de teste no diretório htmlcov.
+
+![coverage](coverage.png)
