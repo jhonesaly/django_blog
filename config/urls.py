@@ -21,5 +21,6 @@ from app_blog import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('posts/<int:post_id>', views.post)
+    path('posts/<int:post_id>', views.post),
+    path('addcomment/<int:id>', views.addcomment, name='addcomment'),
 ]
