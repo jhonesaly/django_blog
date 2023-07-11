@@ -42,6 +42,10 @@ class TestViews(TestCase):
             'comment': 'Test Comment',
         }
 
+        print("Author:", self.user)
+        print("Post:", self.post)
+
+
     def test_home_view(self):
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
@@ -55,7 +59,7 @@ class TestViews(TestCase):
     def test_addcomment_view(self):
         response = self.client.post(reverse('addcomment', args=[self.post.id]), data=self.comment_form_data)
         self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, f'/posts/{self.post.id}')
+        self.assertRedirects(response, f'/posts/{self.post.id}/')
 
         comment = Comment.objects.last()
         self.assertEqual(comment.name, 'Test Name')
